@@ -1,3 +1,9 @@
+# add user erik  to sudoers
+
+su
+/sbin/usermod -aG sudo erik
+# test update
+
 # install packages
 
 sudo apt update && upgrade -y
