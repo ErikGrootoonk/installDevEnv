@@ -51,6 +51,28 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 
 sudo apt install code
 
+# configure network wsl
+
+edit /etc/wsl.conf  
+
+[network]
+generateResolvConf = false
+
+in powershell:  
+wsl -d Ubuntu --shutdown
+
+start wsl
+sudo touch /etc/resolv.conf
+
+inhoud:
+search prhc.lan
+nameserver 194.53.14.11
+nameserver 194.53.14.12
+nameserver 8.8.8.8
+
+
+/etc
+
 
 
 
