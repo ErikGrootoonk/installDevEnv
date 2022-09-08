@@ -34,7 +34,8 @@ set mouse=a
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'sainnhe/gruvbox-material'
-
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.vim'
 call plug#end()
 
 

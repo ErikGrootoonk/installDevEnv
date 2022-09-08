@@ -10,12 +10,16 @@ sudo apt update && upgrade -y
 
 sudo apt install \
 	curl \
-	neovim\
 	git
 
 
 
 # configure neovim
+
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+
 
 mkdir -p ~/.config/nvim
 
@@ -25,7 +29,15 @@ cp ./init.vim  ~/.config/nvim
 sh -c 'curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
        
-       
+sudo npm i -g yarn
+
+cd   ~/.config/nvim/plugged/coc.nvim
+yarn install
+
+# enable coc tab completion
+https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources
+
+
 #install virtualbox guest additions
 
 sudo apt install build-essential dkms linux-headers-$(uname -r)
