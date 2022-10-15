@@ -1,43 +1,20 @@
-" --- General 
+:set number
+:set autoindent
+:set mouse=a
 
-set termguicolors
-set tabstop=4 
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set number
-set numberwidth=1
-"set relativenumber
-set signcolumn=yes
-set noswapfile
-set nobackup
-set undodir=~/.config/nvim/undodir
-set undofile
-set incsearch
-set nohlsearch
-set ignorecase
-set smartcase
-set nowrap
-set splitbelow
-set splitright
-set hidden
-set scrolloff=999
-set noshowmode
-set updatetime=250 
-set encoding=UTF-8
-set mouse=a
+call plug#begin()
 
-
-" --- Plugins
-
-call plug#begin('~/.config/nvim/plugged')
-
-Plug 'sainnhe/gruvbox-material'
+Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.vim'
+Plug 'https://github.com/neoclide/coc.nvim'
+Plug 'https://github.com/sainnhe/gruvbox-material'
+Plug 'https://github.com/morhetz/gruvbox'
 call plug#end()
 
+colorscheme gruvbox
 
-" --- Colors
-colorscheme gruvbox-material 
+nnoremap <C-n> :NERDTree<cr>
+
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+
