@@ -49,8 +49,18 @@ call plug#end()
 
 " key mapping
 inoremap jj <esc>
+nmap <F2> :NERDTreeToggle<CR>
+
+
 " enable backspace
 :set backspace=indent,eol,start
 
 " enable mouse
 set mouse=a
+" set line endings to unix
+set ff=unix 
+" set encoding to utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+
+
