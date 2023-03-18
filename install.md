@@ -28,15 +28,18 @@ cp ./init.vim  ~/.config/nvim
 
 sh -c 'curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-       
-sudo npm i -g yarn
 
-cd   ~/.config/nvim/plugged/coc.nvim
+# install nodejs
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+
+#sudo npm i -g yarn
+# in Neovim:  PlugInstall
+cd ~/.local/share/nvim/plugged/coc.nvim
 yarn install
 
 # enable coc tab completion
 https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources
-
 
 #install virtualbox guest additions
 
