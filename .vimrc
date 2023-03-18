@@ -48,4 +48,9 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 call plug#end()
 
 " key mapping
-inoremap jj <esc> 
+inoremap jj <esc>
+" enable backspace
+:set backspace=indent,eol,start
+
+" enable mouse
+set mouse=a
