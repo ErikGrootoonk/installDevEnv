@@ -4,6 +4,8 @@ let $LANG = 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
+"set theme
+color koehler
 
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
@@ -56,9 +58,12 @@ set history=1000
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
+let g:coc_node_path = '/usr/bin/node'
+
 " vim plug
-call plug#begin('C:\Users\erik.grootoonk\vimfiles\autoload')
+call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
