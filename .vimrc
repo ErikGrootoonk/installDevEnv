@@ -3,7 +3,8 @@ set langmenu=en_US
 let $LANG = 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-
+" set theme
+color Koehler
 
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
@@ -85,11 +86,11 @@ set fileencoding=utf-8
 "set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate
-" " NOTE: There's always complete item selected by default, you may want to
+" NOTE: There's always complete item selected by default, you may want to
 " enable
-" " no select by `"suggest.noselect": true` in your configuration file
-" " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" " other plugin before putting this into your config
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
        \ coc#pum#visible() ? coc#pum#next(1) :
        \ CheckBackspace() ? "\<Tab>" :
@@ -108,3 +109,7 @@ function! CheckBackspace() abort
   getline('.')[col - 1]
   =~# '\s'
 endfunction
+
+" set tab and s-tab to navigate the completion list 
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"  
