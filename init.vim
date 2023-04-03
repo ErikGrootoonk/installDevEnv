@@ -24,6 +24,9 @@ set backupdir=~/.cache/vim  " Directory to store backup files.
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/morhetz/gruvbox'
+
 call plug#end()
 
 " key mapping
