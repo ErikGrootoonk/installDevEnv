@@ -1,3 +1,4 @@
+let mapleader = " "
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
@@ -13,7 +14,20 @@ set wildmode=longest,list   " get bash-like tab completions
 filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
-set clipboard=unnamedplus   " using system clipboard
+"set clipboard=unnamedplus   " using system clipboard
+
+" Copy to clipboard
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg_
+nnoremap <leader>y "+y
+
+" Paste from clipboard
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+
+
 filetype plugin on
 "set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
