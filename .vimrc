@@ -1,38 +1,34 @@
-" set language to english
-set langmenu=en_US
+set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
+
+set langmenu=en_US      " set language to english
+
 let $LANG = 'en_US'
+
 source $VIMRUNTIME/delmenu.vim
+
 source $VIMRUNTIME/menu.vim
-" set theme
-color Koehler
 
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
+color koehler           "set theme
 
-" Enable type file detection. Vim will be able to try to detect the type of
-" file in use.
-filetype on
+filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
 
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
+filetype plugin on      " Enable plugins and load plugin for the detected file type.
 
-" Load an indent file for the detected file type.
-filetype indent on
+filetype indent on      " Load an indent file for the detected file type.
 
-" Do not save backup files.
-set nobackup
+set nobackup            " Do not save backup files.
+
 set nowritebackup
 
-" Search in subdirectories
-set path+=**
+set path+=**            " Search in subdirectories
 
-" Add numbers to each line on the left-hand side.
 set number
-" decrease update time
-set updatetime=300
 
-" change tabs to spaces
-set expandtab
+set relativenumber
+
+set updatetime=300      " decrease update time
+
+set expandtab           " change tabs to spaces
 
 set smarttab
 
@@ -40,57 +36,45 @@ set shiftwidth=2
 
 set tabstop=2
 
-" Show matching words during a search.
-set showmatch
-" Use highlighting when doing a search.
-set hlsearch
+set showmatch           " Show matching words during a search.
 
-" Turn syntax highlighting on.
-syntax enable
+set hlsearch            " Use highlighting when doing a search.
 
-" Always show the status line
-set laststatus=2
+syntax enable           " Turn syntax highlighting on.
 
-" Set the commands to save in history default number is 20.
-set history=1000
+set history=1000        " Set the commands to save in history default number is 20.
+let g:coc_node_path = '/usr/bin/node' "set node path
 
-" Format the status line
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-" vim plug
-call plug#begin('C:\Users\erik.grootoonk\vimfiles\autoload')
+call plug#begin('~/.vim/plugged') 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-" key mapping
-inoremap jj <esc>
-nmap <F2> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR> 
 
+:set backspace=indent,eol,start " enable backspace
 
-" enable backspace
-:set backspace=indent,eol,start
+set mouse=a             " enable mouse
 
-" enable mouse
-set mouse=a
-" set line endings to unix
-set ff=unix 
-" set encoding to utf-8
-set encoding=utf-8
+set ff=unix             " set line endings to unix
+set encoding=utf-8      " set encoding to utf-8
 set fileencoding=utf-8
 
-" Coc config
+"""" Coc config """"
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
 "set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate
-" NOTE: There's always complete item selected by default, you may want to
+" " NOTE: There's always complete item selected by default, you may want to
 " enable
-" no select by `"suggest.noselect": true` in your configuration file
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config
+" " no select by `"suggest.noselect": true` in your configuration file
+" " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" " other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
        \ coc#pum#visible() ? coc#pum#next(1) :
        \ CheckBackspace() ? "\<Tab>" :
@@ -112,4 +96,27 @@ endfunction
 
 " set tab and s-tab to navigate the completion list 
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"  
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>" 
+
+"enable windows system clipboard
+
+"let g:clipboard = {
+"  \   'name': 'WslClipboard',
+"  \   'copy': {
+"  \      '+': 'clip.exe',
+"  \      '*': 'clip.exe',
+"  \    },
+"  \   'paste': {
+"  \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+"  \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+"  \   },
+"  \   'cache_enabled': 0,
+"  \ }
+
+
+if system('uname -r') =~ "microsoft"
+  augroup Yank
+  autocmd!
+  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+  augroup END
+endif
