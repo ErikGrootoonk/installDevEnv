@@ -16,9 +16,9 @@ filetype plugin on      " Enable plugins and load plugin for the detected file t
 
 filetype indent on      " Load an indent file for the detected file type.
 
-set nobackup            " Do not save backup files.
-
-set nowritebackup
+set backupdir=~/.vim/backup//  "backup dir to .vim folder
+set directory=~/.vim/swap//    "swap dir to .vim folder
+set undodir=~/.vim/undo//      "undo dir to .vim folder
 
 set path+=**            " Search in subdirectories
 
