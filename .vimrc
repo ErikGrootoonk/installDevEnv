@@ -8,7 +8,8 @@ source $VIMRUNTIME/delmenu.vim
 
 source $VIMRUNTIME/menu.vim
 
-color koehler           "set theme
+"color koehler           "set theme
+
 
 filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
 
@@ -53,9 +54,18 @@ Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-nmap <F2> :NERDTreeToggle<CR> 
+colorscheme  gruvbox
+set background=dark
 
-:set backspace=indent,eol,start " enable backspace
+nmap <F2> :NERDTreeToggle<CR> 
+"inoremap jj <ESC>
+"vnoremap jj <ESC>
+
+" Map Ctrl-s to saving in both normal and insert mode
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
+
+set backspace=indent,eol,start " enable backspace
 
 set mouse=a             " enable mouse
 
