@@ -2,7 +2,6 @@
 
 su
 /sbin/usermod -aG sudo erik
-# test update
 
 # install packages
 
