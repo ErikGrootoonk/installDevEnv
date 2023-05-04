@@ -29,8 +29,11 @@ end
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
+  -- color scheme
   use("bluz71/vim-nightfly-guicolors")
 
+  -- tmux & split window navigation
+  use("christoomey/vim-tmux-navigator")
 
   if packer_bootstrap then
     require("packer").sync()
