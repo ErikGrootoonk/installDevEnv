@@ -22,11 +22,24 @@ opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start"
 
 -- clipboard
-opt.clipboard:append("unnamedplus")
+-- sync wsl2 vim clipboard with windows
+vim.cmd([[
+  if system('uname -r') =~ "microsoft"
+    augroup Yank
+    autocmd!
+    autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+    augroup END
+  else 
+    clipboard:append("unnamedplus")
+  endif
+]]) 
+
+
+--opt.clipboard:append("unnamedplus")
 
 -- split windows
 opt.splitright = true
 opt.splitbelow = true
 
--- search sees - as one word
+-- w sees test1-test2 as one word
 opt.iskeyword:append("-")

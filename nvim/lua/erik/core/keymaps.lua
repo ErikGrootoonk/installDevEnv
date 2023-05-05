@@ -27,3 +27,5 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 
 
+-- enable windows system clipboard
+
