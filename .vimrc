@@ -47,7 +47,7 @@ set history=1000        " Set the commands to save in history default number is 
 set background=dark
 
 " For all text files set 'textwidth' to 78 characters.
-autocmd FileType text setlocal textwidth=78
+autocmd FileType text setlocal textwidth=80
 
 
 " Map Ctrl-s to saving in both normal and insert mode
@@ -67,6 +67,7 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 colorscheme gruvbox
