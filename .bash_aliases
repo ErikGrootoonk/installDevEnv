@@ -1,0 +1,8 @@
+alias ga='git add -A'
+alias gb='git branch'
+alias gch='git checkout'
+alias gc='git commit'
+alias gp='git pull'
+alias gs='git status'
+alias gpu='git push'
+alias tailwind='npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch'
