@@ -119,7 +119,11 @@ set ff=unix             " set line endings to unix
 set encoding=utf-8      " set encoding to utf-8
 set fileencoding=utf-8
 
- 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 if system('uname -r') =~ "microsoft"
