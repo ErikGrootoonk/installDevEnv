@@ -1,58 +1,73 @@
-let mapleader = " "
-set nocompatible            " disable compatibility to old-time vi
-set showmatch               " show matching 
-set ignorecase              " case insensitive 
-set hlsearch                " highlight search 
-set incsearch               " incremental search
-set tabstop=4               " number of columns occupied by a tab 
-set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
-set expandtab               " converts tabs to white space
-set shiftwidth=4            " width for autoindents
-set autoindent              " indent a new line the same amount as the line just typed
-set number                  " add line numbers
-set wildmode=longest,list   " get bash-like tab completions
-filetype plugin indent on   "allow auto-indenting depending on file type
-syntax on                   " syntax highlighting
-set mouse=a                 " enable mouse click
-"set clipboard=unnamedplus   " using system clipboard
+set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
 
-" Copy to clipboard
-vnoremap <leader>y "+y
-nnoremap <leader>Y "+yg_
-nnoremap <leader>y "+y
+set langmenu=en_US      " set language to english
 
-" Paste from clipboard
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
+let $LANG = 'en_US'
+
+source $VIMRUNTIME/delmenu.vim
+
+source $VIMRUNTIME/menu.vim
+
+" map leader key to comma
+let mapleader = ","
+set timeoutlen=500 
 
 
-filetype plugin on
-"set cursorline              " highlight current cursorline
-set ttyfast                 " Speed up scrolling in Vim
-" set spell                 " enable spell check (may need to download language package)
-" set noswapfile            " disable creating swap file
-set backupdir=~/.cache/vim  " Directory to store backup files.
-"
-call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'
+"color koehler           "set theme
+
+
+filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
+
+filetype plugin on      " Enable plugins and load plugin for the detected file type.
+
+filetype indent on      " Load an indent file for the detected file type.
+
+set backupdir=~/.vim/backup//  "backup dir to .vim folder
+set directory=~/.vim/swap//    "swap dir to .vim folder
+set undodir=~/.vim/undo//      "undo dir to .vim folder
+
+set path+=**            " Search in subdirectories
+
+set number
+
+set relativenumber
+
+set updatetime=300      " decrease update time
+
+set expandtab           " change tabs to spaces
+
+set smarttab
+
+set shiftwidth=2
+
+set tabstop=2
+
+set showmatch           " Show matching words during a search.
+
+set hlsearch            " Use highlighting when doing a search.
+
+syntax enable           " Turn syntax highlighting on.
+
+set history=1000        " Set the commands to save in history default number is 20.
+let g:coc_node_path = '/usr/bin/node' "set node path
+
+call plug#begin() 
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/morhetz/gruvbox'
-
 call plug#end()
 
-" key mapping
-inoremap jj <esc>
-nmap <F2> :NERDTreeToggle<CR>
-
-" Coc config
+"""" Coc config """"
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
-"set signcolumn=yes
-
+" set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate
 " " NOTE: There's always complete item selected by default, you may want to
 " enable
@@ -71,7 +86,6 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1)
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \:"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col ||
@@ -84,17 +98,39 @@ inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
-"enable windows system clipboard
 
-let g:clipboard = {
-  \   'name': 'WslClipboard',
-  \   'copy': {
-  \      '+': 'clip.exe',
-  \      '*': 'clip.exe',
-  \    },
-  \   'paste': {
-  \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-  \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-  \   },
-  \   'cache_enabled': 0,
-  \ }
+colorscheme  gruvbox
+set background=dark
+
+nmap <F2> :NERDTreeToggle<CR> 
+"inoremap jj <ESC>
+"vnoremap jj <ESC>
+
+" Map Ctrl-s to saving in both normal and insert mode
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
+
+" Map leader to ctrl -v because of WSL default mappings
+nnoremap <leader>v <C-v>
+
+set backspace=indent,eol,start " enable backspace
+
+set mouse=a             " enable mouse
+
+set ff=unix             " set line endings to unix
+set encoding=utf-8      " set encoding to utf-8
+set fileencoding=utf-8
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
+if system('uname -r') =~ "microsoft"
+  augroup Yank
+  autocmd!
+  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+  augroup END
+endif
