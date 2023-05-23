@@ -7,11 +7,6 @@ su
 
 sudo apt update && upgrade -y
 
-sudo apt install \
-	curl \
-	git
-
-
 
 ## configure vim
 
@@ -76,13 +71,6 @@ sudo adduser $USER vboxsf
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 
-## install VSCode
-
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-
-sudo apt install code
 
 ## configure network wsl
 
@@ -104,12 +92,7 @@ nameserver 194.53.14.12
 nameserver 8.8.8.8
 
 
-/etc
 
-### install plug
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 

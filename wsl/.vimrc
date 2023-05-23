@@ -49,7 +49,6 @@ set hlsearch            " Use highlighting when doing a search.
 syntax enable           " Turn syntax highlighting on.
 
 set history=1000        " Set the commands to save in history default number is 20.
-let g:coc_node_path = '/usr/bin/node' "set node path
 
 call plug#begin() 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -66,13 +65,13 @@ colorscheme  gruvbox
 set background=dark
 
 nmap <F2> :NERDTreeToggle<CR> 
-"inoremap jj <ESC>
-"vnoremap jj <ESC>
 
 " Map Ctrl-s to saving in both normal and insert mode
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
 
+" Map <leader>v  to ctrl-v  
+nnoremap <leader>v <C-v>
 
 set backspace=indent,eol,start " enable backspace
 
@@ -86,7 +85,7 @@ set fileencoding=utf-8
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
-"set signcolumn=yes
+set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate
 " " NOTE: There's always complete item selected by default, you may want to
