@@ -60,7 +60,7 @@ Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'mzlogin/vim-markdown-toc'
-Plug 'tpope/vim-fugative'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
