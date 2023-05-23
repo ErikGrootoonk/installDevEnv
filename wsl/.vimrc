@@ -51,7 +51,7 @@ syntax enable           " Turn syntax highlighting on.
 set history=1000        " Set the commands to save in history default number is 20.
 let g:coc_node_path = '/usr/bin/node' "set node path
 
-call plug#begin('~/.vim/plugged') 
+call plug#begin() 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'

@@ -1,7 +1,12 @@
 # install devenv on Windows10
 - install firefox
+- install stack client https://erikgrootoonk.stackstorage.com/software#recommended
+- install onepassword
 - install obsidian
+- install Whatsapp
 - set executionpolicy remotesigned
 - install nerdfont Hurmit Nerd Font
 - install oh my posh https://ohmyposh.dev/
-- install vscode
+- install vscode 
+- install vscode Gruvbox Theme v1.8.0  jdinhlife
+- install Windows Terminal
