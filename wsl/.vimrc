@@ -12,6 +12,8 @@ source $VIMRUNTIME/menu.vim
 let mapleader = ","
 set timeoutlen=500 
 
+" noh
+map <leader>h :noh<CR>
 
 "color koehler           "set theme
 
@@ -58,6 +60,7 @@ Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'mzlogin/vim-markdown-toc'
+Plug 'tpope/vim-fugative'
 call plug#end()
 
 
