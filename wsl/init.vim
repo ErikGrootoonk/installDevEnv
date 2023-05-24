@@ -98,6 +98,8 @@ inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
+" Map leader to ctrl -v because of WSL default mappings
+nnoremap <leader>v <C-v>
 
 colorscheme  gruvbox
 set background=dark
@@ -110,6 +112,11 @@ nmap <F2> :NERDTreeToggle<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 set backspace=indent,eol,start " enable backspace
 
@@ -119,11 +126,7 @@ set ff=unix             " set line endings to unix
 set encoding=utf-8      " set encoding to utf-8
 set fileencoding=utf-8
 
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+ 
 
 
 if system('uname -r') =~ "microsoft"
