@@ -22,7 +22,8 @@ call plug#end()
 nmap <F2> :NERDTreeToggle<CR>
 let mapleader = ","
 nnoremap <leader>v <C-v>
-
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
 
 set path+=**
 set hlsearch
