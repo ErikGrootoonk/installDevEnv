@@ -61,6 +61,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 

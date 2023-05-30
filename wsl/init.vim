@@ -16,6 +16,7 @@ call plug#begin()
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 "mapping
