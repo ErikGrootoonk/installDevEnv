@@ -7,9 +7,25 @@ su
 
 sudo apt update && upgrade -y
 
-sudo apt install \
-	curl \
-	git
+
+## configure vim
+
+```
+mkdir .vim
+
+# install vim-plug
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+# install nodejs
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+
+cp <git/wsl>.vimrc ~/
+
+```
 
 
 
@@ -28,9 +44,7 @@ cp ./init.vim  ~/.config/nvim
 sh -c 'curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-## install nodejs
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+
 
 ##sudo npm i -g yarn
 ## in Neovim:  PlugInstall
@@ -57,13 +71,6 @@ sudo adduser $USER vboxsf
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 
-##install VSCode
-
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-
-sudo apt install code
 
 ## configure network wsl
 
@@ -84,8 +91,6 @@ nameserver 194.53.14.11
 nameserver 194.53.14.12
 nameserver 8.8.8.8
 
-
-/etc
 
 
 

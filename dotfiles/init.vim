@@ -8,12 +8,10 @@ source $VIMRUNTIME/delmenu.vim
 
 source $VIMRUNTIME/menu.vim
 
-" map leader key to space
+" map leader key to comma
 let mapleader = ","
 set timeoutlen=500 
 
-" noh
-map <leader>h :noh<CR>
 
 "color koehler           "set theme
 
@@ -51,46 +49,25 @@ set hlsearch            " Use highlighting when doing a search.
 syntax enable           " Turn syntax highlighting on.
 
 set history=1000        " Set the commands to save in history default number is 20.
+let g:coc_node_path = '/usr/bin/node' "set node path
 
 call plug#begin() 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-commentary'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'mzlogin/vim-markdown-toc'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/goyo.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
-
-
-colorscheme  gruvbox
-set background=dark
-
-nmap <F2> :NERDTreeToggle<CR> 
-
-" Map Ctrl-s to saving in both normal and insert mode
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <ESC>:w<CR>
-
-" Map <leader>v  to ctrl-v  
-nnoremap <leader>v <C-v>
-
-set backspace=indent,eol,start " enable backspace
-
-set mouse=a             " enable mouse
-
-set ff=unix             " set line endings to unix
-set encoding=utf-8      " set encoding to utf-8
-set fileencoding=utf-8
 
 """" Coc config """"
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
-set signcolumn=yes
-
+" set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate
 " " NOTE: There's always complete item selected by default, you may want to
 " enable
@@ -118,22 +95,37 @@ endfunction
 
 " set tab and s-tab to navigate the completion list 
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>" 
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
-"enable windows system clipboard
 
-"let g:clipboard = {
-"  \   'name': 'WslClipboard',
-"  \   'copy': {
-"  \      '+': 'clip.exe',
-"  \      '*': 'clip.exe',
-"  \    },
-"  \   'paste': {
-"  \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-"  \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-"  \   },
-"  \   'cache_enabled': 0,
-"  \ }
+
+colorscheme  gruvbox
+set background=dark
+
+nmap <F2> :NERDTreeToggle<CR> 
+"inoremap jj <ESC>
+"vnoremap jj <ESC>
+
+" Map Ctrl-s to saving in both normal and insert mode
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
+
+" Map leader to ctrl -v because of WSL default mappings
+nnoremap <leader>v <C-v>
+
+set backspace=indent,eol,start " enable backspace
+
+set mouse=a             " enable mouse
+
+set ff=unix             " set line endings to unix
+set encoding=utf-8      " set encoding to utf-8
+set fileencoding=utf-8
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 if system('uname -r') =~ "microsoft"
