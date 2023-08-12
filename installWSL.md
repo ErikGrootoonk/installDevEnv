@@ -12,7 +12,9 @@ sudo apt update && upgrade -y
 
 ```
 mkdir .vim
-
+mkdir .vim/backup
+mkdir .vim/swap
+mkdir .vim/undo
 # install vim-plug
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -23,9 +25,14 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 
-cp <git/wsl>.vimrc ~/
+create symbolic link to  <git/installDevEnv/dotfiles/.vimrc>
 
-```
+# Coc
+:CocInstall coc-yaml
+:CocInstall coc-html-css-support
+
+
+
 
 
 
