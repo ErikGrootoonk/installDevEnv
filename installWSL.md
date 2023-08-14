@@ -31,8 +31,12 @@ create symbolic link to  <git/installDevEnv/dotfiles/.vimrc>
 :CocInstall coc-yaml
 :CocInstall coc-html-css-support
 
+# tmux
+link tmux dot file
 
-
+ln -s /pgit/installDevEnv/dotfiles/.tmux.conf .
+# install tmux plugin manager
+https://github.com/tmux-plugins/tpm
 
 
 
