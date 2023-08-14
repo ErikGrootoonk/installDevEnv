@@ -61,6 +61,7 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
