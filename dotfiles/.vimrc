@@ -63,6 +63,8 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+let g:gruvbox_contrast_dark = 'hard'
+
 """" Coc config """"
 
 " Always show the signcolumn, otherwise it would shift the text each time
