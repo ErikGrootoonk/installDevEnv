@@ -12,6 +12,7 @@ source $VIMRUNTIME/menu.vim
 let mapleader = ","
 set timeoutlen=500 
 
+set paste                 "prevent formatting when pasting text
 " noh
 map <leader>h :noh<CR>
 
@@ -62,6 +63,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 
@@ -80,7 +82,7 @@ nnoremap <leader>v <C-v>
 set backspace=indent,eol,start " enable backspace
 
 set mouse=a             " enable mouse
-
+set paste               " prevent formatting pasted text
 set ff=unix             " set line endings to unix
 set encoding=utf-8      " set encoding to utf-8
 set fileencoding=utf-8
