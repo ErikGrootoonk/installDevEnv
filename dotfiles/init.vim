@@ -42,9 +42,9 @@ set shiftwidth=2
 
 set tabstop=2
 
-set showmatch           " Show matching words during a search.
+"set showmatch           " Show matching words during a search.
 
-set hlsearch            " Use highlighting when doing a search.
+"set hlsearch            " Use highlighting when doing a search.
 
 syntax enable           " Turn syntax highlighting on.
 
