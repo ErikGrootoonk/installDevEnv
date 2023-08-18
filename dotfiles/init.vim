@@ -13,8 +13,6 @@ let mapleader = ","
 set timeoutlen=500 
 
 
-"color koehler           "set theme
-
 
 filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
 
@@ -55,6 +53,7 @@ call plug#begin()
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'ratazzi/blackboard.vim'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mzlogin/vim-markdown-toc'
@@ -101,7 +100,7 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
 colorscheme  gruvbox
-set background=dark
+"set background=dark
 
 nmap <F2> :NERDTreeToggle<CR> 
 "inoremap jj <ESC>
