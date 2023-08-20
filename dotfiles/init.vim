@@ -53,6 +53,7 @@ call plug#begin()
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'ratazzi/blackboard.vim'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
@@ -99,8 +100,8 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
 
-colorscheme  gruvbox
-"set background=dark
+set background=dark
+colorscheme  PaperColor
 
 nmap <F2> :NERDTreeToggle<CR> 
 "inoremap jj <ESC>
