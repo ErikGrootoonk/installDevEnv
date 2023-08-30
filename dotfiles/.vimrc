@@ -28,6 +28,8 @@ set undodir=~/.vim/undo//      "undo dir to .vim folder
 
 set path+=**            " Search in subdirectories
 
+set wildmenu            " Display all matching files when we tab complete
+
 set number
 
 set relativenumber
