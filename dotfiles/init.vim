@@ -104,8 +104,8 @@ set background=dark
 colorscheme  PaperColor
 
 nmap <F2> :NERDTreeToggle<CR> 
-"inoremap jj <ESC>
-"vnoremap jj <ESC>
+inoremap jj <ESC>
+vnoremap jj <ESC>
 
 " Map Ctrl-s to saving in both normal and insert mode
 nnoremap <C-s> :w<CR>
