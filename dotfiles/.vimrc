@@ -8,13 +8,13 @@ source $VIMRUNTIME/delmenu.vim
 
 source $VIMRUNTIME/menu.vim
 
-" map leader key to comma
-let mapleader = ","
+" map leader key to quote
+let mapleader = "'"
 set timeoutlen=500 
 
-
-"color koehler           "set theme
-
+" remap ESC to jk
+"inoremap jk <ESC>
+"vnoremap jk <ESC>
 
 filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
 
@@ -38,7 +38,7 @@ set updatetime=300      " decrease update time
 
 set expandtab           " change tabs to spaces
 
-set smarttab
+"set smarttab
 
 set shiftwidth=2
 
@@ -72,7 +72,7 @@ let g:gruvbox_contrast_dark = 'hard'
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
-" set signcolumn=yes
+set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate
 " " NOTE: There's always complete item selected by default, you may want to
 " enable
@@ -103,13 +103,11 @@ inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
-
-colorscheme  gruvbox
+" set colorscheme
+colorscheme  murphy
 set background=dark
 
 nmap <F2> :NERDTreeToggle<CR> 
-"inoremap jj <ESC>
-"vnoremap jj <ESC>
 
 " Map Ctrl-s to saving in both normal and insert mode
 nnoremap <C-s> :w<CR>
