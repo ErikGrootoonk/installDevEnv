@@ -9,7 +9,7 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 " map leader key to comma
-let mapleader = ","
+let mapleader = "'"
 set timeoutlen=500 
 
 
@@ -104,7 +104,7 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
 
-colorscheme  gruvbox
+colorscheme murphy 
 set background=dark
 
 nmap <F2> :NERDTreeToggle<CR> 
