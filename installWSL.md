@@ -1,4 +1,4 @@
-## add user erik  to sudoers
+## add user erik to sudoers
 
 su
 /sbin/usermod -aG sudo erik
@@ -6,7 +6,6 @@ su
 ## install packages
 
 sudo apt update && upgrade -y
-
 
 ## configure vim
 
@@ -56,7 +55,7 @@ sudo apt-get install neovim
 mkdir -p ~/.config/nvim
 
 cd  ~/.config/nvim
-ln -s ~/git/installDevEnv/dotfiles/init.vim .
+ln -s /mnt/c/pgit/installDevEnv/dotfiles/init.vim .
 
 sh -c 'curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -91,12 +90,12 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 ## configure network wsl
 
-edit /etc/wsl.conf  
+edit /etc/wsl.conf
 
 [network]
 generateResolvConf = false
 
-in powershell:  
+in powershell:
 wsl -d Ubuntu --shutdown
 
 start wsl
@@ -114,3 +113,4 @@ nameserver 8.8.8.8
 
 
 
+```
