@@ -4,12 +4,8 @@ set langmenu=en_US      " set language to english
 
 let $LANG = 'en_US'
 
-source $VIMRUNTIME/delmenu.vim
-
-source $VIMRUNTIME/menu.vim
-
 " map leader key to comma
-let mapleader = ","
+let mapleader = "'"
 set timeoutlen=500 
 
 
@@ -54,7 +50,7 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'ratazzi/blackboard.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mzlogin/vim-markdown-toc'
@@ -101,11 +97,9 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
 set background=dark
-colorscheme  PaperColor
+colorscheme  murphy
 
 nmap <F2> :NERDTreeToggle<CR> 
-"inoremap jj <ESC>
-"vnoremap jj <ESC>
 
 " Map Ctrl-s to saving in both normal and insert mode
 nnoremap <C-s> :w<CR>

@@ -1,4 +1,4 @@
-## add user erik  to sudoers
+## add user erik to sudoers
 
 su
 /sbin/usermod -aG sudo erik
@@ -6,7 +6,6 @@ su
 ## install packages
 
 sudo apt update && upgrade -y
-
 
 ## configure vim
 
@@ -22,10 +21,15 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 
 # install nodejs
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get update && sudo apt-get install nodejs -y
 
-create symbolic link to  <git/installDevEnv/dotfiles/.vimrc>
+# create symbolic link to  <git/installDevEnv/dotfiles/.vimrc> from ~
+ln -s /mnt/c/pgit/installDevEnv/dotfiles/.vimrc .vimrc
+
 
 # Coc
 :CocInstall coc-yaml
@@ -51,7 +55,7 @@ sudo apt-get install neovim
 mkdir -p ~/.config/nvim
 
 cd  ~/.config/nvim
-ln -s ~/git/installDevEnv/dotfiles/init.vim .
+ln -s /mnt/c/pgit/installDevEnv/dotfiles/init.vim .
 
 sh -c 'curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -86,12 +90,12 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 ## configure network wsl
 
-edit /etc/wsl.conf  
+edit /etc/wsl.conf
 
 [network]
 generateResolvConf = false
 
-in powershell:  
+in powershell:
 wsl -d Ubuntu --shutdown
 
 start wsl
@@ -109,3 +113,4 @@ nameserver 8.8.8.8
 
 
 
+```
