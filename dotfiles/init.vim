@@ -1,50 +1,4 @@
-set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
-
-set langmenu=en_US      " set language to english
-
-let $LANG = 'en_US'
-
-" map leader key to comma
-let mapleader = "'"
-set timeoutlen=500 
-
-
-
-filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
-
-filetype plugin on      " Enable plugins and load plugin for the detected file type.
-
-filetype indent on      " Load an indent file for the detected file type.
-
-set backupdir=~/.vim/backup//  "backup dir to .vim folder
-set directory=~/.vim/swap//    "swap dir to .vim folder
-set undodir=~/.vim/undo//      "undo dir to .vim folder
-
-set path+=**            " Search in subdirectories
-
-set number
-
-set relativenumber
-
-set updatetime=300      " decrease update time
-
-set expandtab           " change tabs to spaces
-
-set smarttab
-
-set shiftwidth=2
-
-set tabstop=2
-
-"set showmatch           " Show matching words during a search.
-
-"set hlsearch            " Use highlighting when doing a search.
-
-syntax enable           " Turn syntax highlighting on.
-
-set history=1000        " Set the commands to save in history default number is 20.
-let g:coc_node_path = '/usr/bin/node' "set node path
-
+" Load plugins
 call plug#begin() 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
@@ -60,7 +14,39 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
-"""" Coc config """"
+" General configuration
+
+set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
+set langmenu=en_US      " set language to english
+let $LANG = 'en_US'
+let mapleader = "'" " map leader key to quote
+set timeoutlen=500 
+filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
+filetype plugin on      " Enable plugins and load plugin for the detected file type.
+filetype indent on      " Load an indent file for the detected file type.
+set backupdir=~/.vim/backup//  "backup dir to .vim folder
+set directory=~/.vim/swap//    "swap dir to .vim folder
+set undodir=~/.vim/undo//      "undo dir to .vim folder
+set path+=**            " Search in subdirectories
+set number
+set relativenumber
+set updatetime=300      " decrease update time
+set expandtab           " change tabs to spaces
+set smarttab
+set shiftwidth=2
+set tabstop=2
+set ignorecase
+set smartcase
+"set showmatch           " Show matching words during a search.
+"set hlsearch            " Use highlighting when doing a search.
+syntax enable           " Turn syntax highlighting on.
+set history=1000        " Set the commands to save in history default number is 20.
+let g:coc_node_path = '/usr/bin/node' "set node path
+set background=dark
+colorscheme  PaperColor
+
+
+"" Coc config ""
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
@@ -94,33 +80,23 @@ endfunction
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
-set background=dark
-colorscheme  murphy
-
+" NerdTree
 nmap <F2> :NERDTreeToggle<CR> 
 
+" WSL specific settings
 " Map Ctrl-s to saving in both normal and insert mode
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
 
 " Map leader to ctrl -v because of WSL default mappings
 nnoremap <leader>v <C-v>
-
-set backspace=indent,eol,start " enable backspace
-
-set mouse=a             " enable mouse
-
-set ff=unix             " set line endings to unix
-set encoding=utf-8      " set encoding to utf-8
-set fileencoding=utf-8
-
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 if system('uname -r') =~ "microsoft"
