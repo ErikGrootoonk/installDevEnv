@@ -100,6 +100,9 @@ nnoremap <leader>v <C-v>
 "Map yy to ESC
 inoremap yy <ESC>
 
+" esc to exit terminal mode
+:tnoremap <Esc> <C-\><C-n>
+
 if system('uname -r') =~ "microsoft"
   augroup Yank
   autocmd!
