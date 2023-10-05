@@ -97,7 +97,8 @@ inoremap <C-s> <ESC>:w<CR>
 
 " Map leader to ctrl -v because of WSL default mappings
 nnoremap <leader>v <C-v>
-
+"Map yy to ESC
+inoremap yy <ESC>
 
 if system('uname -r') =~ "microsoft"
   augroup Yank
