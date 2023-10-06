@@ -7,9 +7,10 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
@@ -19,7 +20,7 @@ call plug#end()
 set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
 set langmenu=en_US      " set language to english
 let $LANG = 'en_US'
-let mapleader = "'" " map leader key to quote
+let mapleader = "'"     " map leader key to quote
 set timeoutlen=500 
 filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
 filetype plugin on      " Enable plugins and load plugin for the detected file type.
