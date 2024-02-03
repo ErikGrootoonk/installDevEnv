@@ -44,7 +44,7 @@ syntax enable           " Turn syntax highlighting on.
 set history=1000        " Set the commands to save in history default number is 20.
 let g:coc_node_path = '/usr/bin/node' "set node path
 set background=dark
-colorscheme  PaperColor
+colorscheme  gruvbox
 
 
 "" Coc config ""
