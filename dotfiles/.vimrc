@@ -1,14 +1,5 @@
 set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
 
-set langmenu=en_US      " set language to english
-
-let $LANG = 'en_US'
-
-source $VIMRUNTIME/delmenu.vim
-
-source $VIMRUNTIME/menu.vim
-
-" map leader key to quote
 " map leader key to comma
 let mapleader = "'"
 set timeoutlen=500 
@@ -45,9 +36,9 @@ set shiftwidth=2
 
 set tabstop=2
 
-set showmatch           " Show matching words during a search.
+"set showmatch           " Show matching words during a search.
 
-set hlsearch            " Use highlighting when doing a search.
+"set hlsearch            " Use highlighting when doing a search.
 
 syntax enable           " Turn syntax highlighting on.
 
@@ -70,7 +61,7 @@ call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
 
-"""" Coc config """"
+" Coc config "
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
