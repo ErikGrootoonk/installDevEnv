@@ -14,9 +14,6 @@ filetype plugin on      " Enable plugins and load plugin for the detected file t
 
 filetype indent on      " Load an indent file for the detected file type.
 
-set backupdir=~/.vim/backup//  "backup dir to .vim folder
-set directory=~/.vim/swap//    "swap dir to .vim folder
-set undodir=~/.vim/undo//      "undo dir to .vim folder
 
 set path+=**            " Search in subdirectories
 
@@ -43,7 +40,6 @@ set tabstop=2
 syntax enable           " Turn syntax highlighting on.
 
 set history=1000        " Set the commands to save in history default number is 20.
-let g:coc_node_path = '/usr/bin/node' "set node path
 
 call plug#begin() 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
