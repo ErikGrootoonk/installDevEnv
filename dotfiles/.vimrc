@@ -14,9 +14,6 @@ filetype plugin on      " Enable plugins and load plugin for the detected file t
 
 filetype indent on      " Load an indent file for the detected file type.
 
-set backupdir=~/.vim/backup//  "backup dir to .vim folder
-set directory=~/.vim/swap//    "swap dir to .vim folder
-set undodir=~/.vim/undo//      "undo dir to .vim folder
 
 set path+=**            " Search in subdirectories
 
@@ -43,7 +40,6 @@ set tabstop=2
 syntax enable           " Turn syntax highlighting on.
 
 set history=1000        " Set the commands to save in history default number is 20.
-let g:coc_node_path = '/usr/bin/node' "set node path
 
 call plug#begin() 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -52,8 +48,6 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mzlogin/vim-markdown-toc'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
@@ -97,7 +91,7 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
 " set colorscheme
-colorscheme  gruvbox
+colorscheme gruvbox
 
 set background=dark
 
