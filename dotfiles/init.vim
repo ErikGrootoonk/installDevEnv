@@ -20,7 +20,7 @@ call plug#end()
 set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
 set langmenu=en_US      " set language to english
 let $LANG = 'en_US'
-let mapleader = "'"     " map leader key to quote
+let mapleader = " "     " map leader key to space
 set timeoutlen=500 
 filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
 filetype plugin on      " Enable plugins and load plugin for the detected file type.
