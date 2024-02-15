@@ -26,8 +26,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+<<<<<<< HEAD
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
+=======
+>>>>>>> 69f3dda9875da0049fdea7a160d0bf82a37f97ed
 call plug#end()
 
 colorscheme gruvbox
@@ -45,7 +48,10 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 69f3dda9875da0049fdea7a160d0bf82a37f97ed
 
 if system('uname -r') =~ "microsoft"
   augroup Yank
