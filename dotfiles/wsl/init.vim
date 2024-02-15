@@ -17,7 +17,8 @@ Plug 'morhetz/gruvbox'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 call plug#end()
 
 colorscheme gruvbox
@@ -27,8 +28,14 @@ set background=dark
 nmap <F2> :NERDTreeToggle<CR>
 " Map leader to ctrl -v because of WSL default mappings
 nnoremap <leader>v <C-v>
+" Map leader to b for looking up buffers and choose one
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
 
-
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 if system('uname -r') =~ "microsoft"
   augroup Yank
