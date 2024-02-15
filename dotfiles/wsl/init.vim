@@ -10,14 +10,24 @@ syntax enable
 set mouse=a
 set nobackup nowritebackup
 set noswapfile
+set termguicolors
+set splitbelow
+set splitright
+set ignorecase
+" scrolloff = 999
+set virtualedit = "block"
+set inccommand = "split"
 let mapleader = " "
 
 call plug#begin()
-Plug 'morhetz/gruvbox'
+Plug 'ellisonleao/gruvbox'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 colorscheme gruvbox
@@ -28,6 +38,11 @@ nmap <F2> :NERDTreeToggle<CR>
 " Map leader to ctrl -v because of WSL default mappings
 nnoremap <leader>v <C-v>
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 if system('uname -r') =~ "microsoft"
