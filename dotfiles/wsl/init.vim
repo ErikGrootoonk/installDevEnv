@@ -20,7 +20,7 @@ set inccommand = "split"
 let mapleader = " "
 
 call plug#begin()
-Plug 'ellisonleao/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
