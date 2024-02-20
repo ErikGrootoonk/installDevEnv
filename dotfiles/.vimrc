@@ -1,7 +1,7 @@
 set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
 
-" map leader key to comma
-let mapleader = "'"
+" map leader key to space 
+let mapleader = " "
 set timeoutlen=500 
 
 " remap ESC to jk
