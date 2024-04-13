@@ -1,16 +1,17 @@
 set nocompatible        " Disable compatibility with vi which can cause unexpected issues.
 
-" map leader key to comma
-let mapleader = "'"
+" map leader key to space
+let mapleader = " "
 set timeoutlen=500 
 
-" remap ESC to jk
-"inoremap jk <ESC>
-"vnoremap jk <ESC>
 
 filetype on             " Enable type file detection. Vim will be able to try to detect the type of  file in use.
 
 filetype plugin on      " Enable plugins and load plugin for the detected file type.
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
 
 filetype indent on      " Load an indent file for the detected file type.
 
