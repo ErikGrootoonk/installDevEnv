@@ -1,0 +1,49 @@
+{
+    "editor.mouseWheelZoom": true,
+    "editor.fontFamily": "Hurmit Nerd Font",
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.fontSize": 14,
+    "editor.matchBrackets": "never",
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.overviewRulerBorder": false,
+    "editor.glyphMargin": false,
+    "editor.cursorSurroundingLines": 10,
+    "editor.renderWhitespace": "none",
+    "git.openRepositoryInParentFolders": "always",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "[html]": {
+        "editor.defaultFormatter": "mohd-akram.vscode-html-format"
+    },
+    "git.confirmSync": false,
+    
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#54540f",
+        "statusBarItem.remoteBackground": "#458588",
+    },
+    "workbench.activityBar.location": "hidden"
+    
+}
