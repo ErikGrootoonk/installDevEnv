@@ -12,12 +12,13 @@ return {
     priority = 1000,
   },
   {
-    "carlobaldassi/darktangom.vim",
+    "navarasu/onedark.nvim",
     lazy = false,
-    name = "darktango",
+    name = "OneDark.nvim",
+    style = "deep",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme "darktangom"
+      vim.cmd.colorscheme "onedark"
     end
   }
 }
